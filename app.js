@@ -17,7 +17,10 @@ let json = {}; // JSON.
 
 let student = {
     name: 'Juan',
-    edad: 18
+    edad: 18,
+    getName: function () { // Forma antigua de crear clases.
+        return student.name
+    }
 };
 
 list[0];
@@ -50,7 +53,7 @@ else {
 let opc = 0
 switch (opc) {
     case 0:
-        console.log('Menú Principal');
+        console.log('Menu Principal');
 }
 
 // Ciclos
@@ -74,3 +77,49 @@ while (x < 4) {
 function nombreFuncion(x, y) {
     return x + y;
 }
+
+// Otra forma de declarar funciones
+const suma = (x, y) => {
+    return x + y
+}
+
+function miFuncion2(x) {
+    // ...
+    console.log(x);
+}
+
+//Función de retorno
+function miFuncion1(callback) {
+    //...
+    callback(10);
+}
+
+miFuncion1(miFuncion2); //Gracias a esto, se puede acceder a otra función y asignarle el parámetro a la misma directamente.
+
+// Construcción de clases
+class Animal {
+    //Incialización de atributos.
+    constructor(name, age) {
+        this.name = name;
+        this.age = age; 
+    }
+
+    //Métodos
+
+    getName() {
+        return this.name;
+    }
+
+    getAge() {
+        return this.age;
+    }
+}
+
+//Herencia de clases
+class Perro extends Animal {
+    constructor(name, age) {
+        super(name, age)
+    }
+}
+
+let animal = new Animal('Tu mama', 100)
